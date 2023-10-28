@@ -13,7 +13,8 @@ c1, c2 = st.columns(2)
 if upload:
     files = {"file" :  upload.getvalue()}
 
-    req = requests.post("https://fastapi-image-z6t7tex4qa-od.a.run.app/predict", files=files)
+    #req = requests.post("https://fastapi-image-z6t7tex4qa-od.a.run.app/predict", files=files)
+    req = requests.post("http://0.0.0.0:8000/predict",files=files)
     resultat = req.json()
     print(resultat)
     rec = resultat["predictions"]
